@@ -7,10 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "start:dev": "tsx src/server.ts",
-    "start:watch": "tsx watch src/server.ts",
-    "dist": "tsu src",
-    "start:dis": "npm run dist && node/server.js"
+    "start:dev": "tsx --env-file=.env src/server.ts",
+    "start:watch": "tsx --env-file=.env watch src/server.ts",
+    "dist": "tsup src",
+    "start:dis": "npm run dist && --env-file=.env node/server.js"
   },
   "keywords": [],
   "author": "",
