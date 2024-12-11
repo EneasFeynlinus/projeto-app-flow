@@ -1,10 +1,10 @@
-import { FilterPodcastModel } from "../models/filter-podcast-models";
+import { PodcastTransferModel } from "../models/filter-podcast-models";
 import { repositoryPodcast } from "../repositories/podcasts-repository"
 import { StatusCode } from "../utils/status-code";
 
-export const serviceFilterEpisodes = async (podcasName: string | undefined): Promise<FilterPodcastModel> => {
+export const serviceFilterEpisodes = async (podcasName: string | undefined): Promise<PodcastTransferModel> => {
     //define a interface de retorno
-    let responseFormat: FilterPodcastModel = {
+    let responseFormat: PodcastTransferModel = {
         statusCode: 0,
         body: [],
     };
@@ -13,9 +13,10 @@ export const serviceFilterEpisodes = async (podcasName: string | undefined): Pro
     const data = await repositoryPodcast(queryString);
 
     //Verifico se tem conteudo
-    responseFormat.statusCode = data.length ? StatusCode.OK : StatusCode.NoContent;
-
-    responseFormat.body = data;
+    responseFormat = {
+        statusCode: data.length? StatusCode.OK : StatusCode.NoContent,
+        body: data,
+    }
 
     return responseFormat
 }
