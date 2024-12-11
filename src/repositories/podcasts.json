@@ -16,6 +16,12 @@
         "episode": "ENEAS COM SUA BANDA CODIGO GRUNGE [+ Julio Balestrin]",
         "videoId": "vIRM1AC3HT3",
         "categories": ["programação", "musica"]
+    },
+    {
+        "podcastName": "venus",
+        "episode": "ENEAS COM SEU NOVO CODIGO [+ Julio Balestrin]",
+        "videoId": "vIRM1AC3HT3",
+        "categories": ["programação", "livros", "javascript"]
     }
 
 ]
