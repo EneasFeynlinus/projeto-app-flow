@@ -13,11 +13,7 @@ export const serviceFilterEpisodes = async (podcasName: string | undefined): Pro
     const data = await repositoryPodcast(queryString);
 
     //Verifico se tem conteudo
-    if (data.length){
-        responseFormat.statusCode = StatusCode.OK;
-    } else {
-        responseFormat.statusCode = StatusCode.NoContent;
-    }
+    responseFormat.statusCode = data.length ? StatusCode.OK : StatusCode.NoContent;
 
     responseFormat.body = data;
 
